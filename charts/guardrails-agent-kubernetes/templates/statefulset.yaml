@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: {{ include "guardrails-k8s-agent.fullname" . }}
+  name: {{ include "guardrails-agent-kubernetes.fullname" . }}
   labels:
-    {{- include "guardrails-k8s-agent.labels" . | nindent 4 }}
+    {{- include "guardrails-agent-kubernetes.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "guardrails-k8s-agent.selectorLabels" . | nindent 6 }}
+      {{- include "guardrails-agent-kubernetes.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,7 +18,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "guardrails-k8s-agent.labels" . | nindent 8 }}
+        {{- include "guardrails-agent-kubernetes.labels" . | nindent 8 }}
         {{- with .Values.podLabels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
@@ -27,7 +27,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "guardrails-k8s-agent.serviceAccountName" . }}
+      serviceAccountName: {{ include "guardrails-agent-kubernetes.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -42,10 +42,10 @@ spec:
             - name: ENROLL_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: guardrails-k8s-agent-secret
+                  name: guardrails-agent-kubernetes-secret
                   key: enroll-secret
-            {{- if .Values.env }}
-            {{- range .Values.env }}
+            {{- if .Values.extraEnv }}
+            {{- range .Values.extraEnv }}
             - name: {{ .name }}
               {{- if .value }}
               value: {{ .value | quote }}

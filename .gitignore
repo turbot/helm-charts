@@ -1,0 +1,38 @@
+# Helm-specific
+**/charts/*.tgz
+**/tmpcharts/
+**/tmp/
+**/charts/*.lock
+
+# Ignore saved Helm values files that may contain sensitive data
+**/secrets.yaml
+**/*.secrets.yaml
+
+# Ignore override files which are usually used for local development
+**/values.override.yaml
+**/values-*.yaml
+
+# Dependency directories (remove the '#' at the start of the line if you use this)
+# dependencies/
+# tmp/
+
+# Commonly used directories for Helm plugins
+plugins/
+
+# Ignore Helm binary files
+.helm/
+
+# Ignore any backup files created by Helm
+**/*.bak
+
+# IDE/editor specific files
+.idea/
+*.swp
+*.bak
+*~.nib
+.vscode/
+
+# OS-specific files
+.DS_Store
+._*
+Thumbs.db

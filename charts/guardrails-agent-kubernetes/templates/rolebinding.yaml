@@ -4,7 +4,7 @@ metadata:
   name: guardrails:lister-binding
 subjects:
   - kind: ServiceAccount
-    name: {{ include "guardrails-k8s-agent.serviceAccountName" . }}
+    name: {{ include "guardrails-agent-kubernetes.serviceAccountName" . }}
     namespace: default
 roleRef:
   kind: ClusterRole
