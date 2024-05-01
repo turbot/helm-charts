@@ -21,6 +21,9 @@ fullnameOverride: ""
 # Extra environment variables to pass to the agent
 extraEnv: []
 
+# Override the namespace for the deployed resources
+namespaceOverride: ""
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
