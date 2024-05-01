@@ -1,4 +1,4 @@
-# Default values for guardrails-k8s-agent.
+# Default values for guardrails-agent-kubernetes.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -7,9 +7,8 @@ guardrails:
   tlsHostname: ""
 
 replicaCount: 1
-
 image:
-  repository: ghcr.io/turbot/guardrails/osquery-agent
+  repository: ghcr.io/turbot/guardrails-agent-kubernetes
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -34,6 +33,15 @@ serviceAccount:
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
+
+statefulSet:
+  annotations: {}
+
+role:
+  annotations: {}
+
+roleBinding:
+  annotations: {}
 
 podAnnotations: {}
 podLabels: {}

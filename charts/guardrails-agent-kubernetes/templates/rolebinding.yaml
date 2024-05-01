@@ -2,6 +2,12 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: guardrails:lister-binding
+  labels:
+    {{- include "guardrails-agent-kubernetes.labels" . | nindent 4 }}
+  {{- with .Values.roleBinding.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
   namespace: {{ include "guardrails-agent-kubernetes.namespace" . }}
 subjects:
   - kind: ServiceAccount
