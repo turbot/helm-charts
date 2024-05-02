@@ -16,7 +16,4 @@ spec:
     requests:
       storage: {{ .Values.persistentVolumeClaim.capacity }}
   storageClassName: {{ .Values.persistentVolumeClaim.storageClassName }}
-  selector:
-    matchLabels:
-      app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
