@@ -1,0 +1,19 @@
+{{- if .Values.persistentVolume.create -}}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ include "guardrails-agent-kubernetes.persistentVolumeName" . }}
+  labels:
+    {{- include "guardrails-agent-kubernetes.labels" . | nindent 4 }}
+  {{- with .Values.persistentVolume.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  namespace: {{ include "guardrails-agent-kubernetes.namespace" . }}
+spec:
+  capacity:
+    storage: {{ .Values.persistentVolume.capacity }}
+  accessModes: {{ .Values.persistentVolume.accessModes }}
+  persistentVolumeReclaimPolicy: {{ .Values.persistentVolume.reclaimPolicy }}
+  storageClassName: {{ .Values.persistentVolume.storageClassName }}
+{{- end }}
