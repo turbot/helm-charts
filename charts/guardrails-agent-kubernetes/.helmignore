@@ -22,7 +22,9 @@
 *.tmproj
 .vscode/
 
-role.yaml
-rolebinding.yaml
-serviceaccount.yaml
-statefulset.yaml
+# # Debugging disables
+# role.yaml
+# rolebinding.yaml
+# serviceaccount.yaml
+# statefulset.yaml
+# volume.yaml
