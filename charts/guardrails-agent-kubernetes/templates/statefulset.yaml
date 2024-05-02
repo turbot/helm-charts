@@ -47,7 +47,7 @@ spec:
             - name: ENROLL_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: guardrails-agent-kubernetes-secret
+                  name: {{ .Values.enrollmentSecretName | default "guardrails-agent-kubernetes-secret" }}
                   key: enroll-secret
             {{- if .Values.extraEnv }}
             {{- range .Values.extraEnv }}

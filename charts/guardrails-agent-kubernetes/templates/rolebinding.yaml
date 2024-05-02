@@ -12,7 +12,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: {{ include "guardrails-agent-kubernetes.serviceAccountName" . }}
-    namespace: default
+    namespace: {{ include "guardrails-agent-kubernetes.namespace" . }}
 roleRef:
   kind: ClusterRole
   name: guardrails:lister

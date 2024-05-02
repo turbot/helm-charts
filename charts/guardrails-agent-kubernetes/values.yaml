@@ -23,6 +23,9 @@ extraEnv: []
 # Override the namespace for the deployed resources
 namespaceOverride: ""
 
+# The name of the secret containing the enrollment secret
+enrollmentSecretName: ""
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
