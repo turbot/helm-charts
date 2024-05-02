@@ -23,8 +23,10 @@
 .vscode/
 
 # Used in development
-role.yaml
-rolebinding.yaml
-serviceaccount.yaml
+# role.yaml
+# rolebinding.yaml
+# serviceaccount.yaml
 # statefulset.yaml
-volume.yaml
+# volume.yaml
+
+volumeold.yaml

@@ -14,5 +14,5 @@ subjects:
     namespace: {{ include "guardrails-agent-kubernetes.namespace" . }}
 roleRef:
   kind: ClusterRole
-  name: guardrails:lister
+  name: guardrails:agent:lister
   apiGroup: rbac.authorization.k8s.io

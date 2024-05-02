@@ -67,14 +67,16 @@ spec:
             {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- with .Values.volumeMounts }}
           volumeMounts:
+            {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
-          {{- end }}
-      {{- with .Values.volumes }}
+            {{- end }}
+            - name: osquery-data 
+              mountPath: /var/osquery/  # Adjust this path as needed for your application
       volumes:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
+        - name: osquery-data 
+          persistentVolumeClaim:
+            claimName: {{ include "guardrails-agent-kubernetes.persistentVolumeClaimName" . }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
