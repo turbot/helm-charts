@@ -72,7 +72,7 @@ spec:
             {{- toYaml . | nindent 12 }}
             {{- end }}
             - name: osquery-data 
-              mountPath: /var/osquery/  # Adjust this path as needed for your application
+              mountPath: /var/osquery/
       volumes:
         - name: osquery-data 
           persistentVolumeClaim:
