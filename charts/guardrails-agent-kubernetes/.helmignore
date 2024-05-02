@@ -21,3 +21,8 @@
 .idea/
 *.tmproj
 .vscode/
+
+role.yaml
+rolebinding.yaml
+serviceaccount.yaml
+statefulset.yaml

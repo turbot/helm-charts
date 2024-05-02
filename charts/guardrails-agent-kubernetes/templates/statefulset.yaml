@@ -75,12 +75,12 @@ spec:
               mountPath: /var/osquery/
       volumes:
         - name: osquery-data 
-          {{- if .Values.persistentVolumeClaim.create }}
+          {{- if .Values.persistentVolume.create }}
           persistentVolumeClaim:
-            claimName: {{ include "guardrails-agent-kubernetes.persistentVolumeClaimName" . }}
+            claimName: {{ include "guardrails-agent-kubernetes.fullname" . }}
           {{- else }}
           emptyDir:
-            sizeLimit: {{ default "1Gi" .Values.persistentVolumeClaim.capacity }}
+            sizeLimit: {{ .Values.persistentVolume.capacity }}
           {{- end }}
 
       {{- with .Values.nodeSelector }}
