@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   guardrails-agent-kubernetes:
   - apiVersion: v2
+    appVersion: 0.0.3
+    created: "2024-05-03T14:48:26.469513715Z"
+    description: Helm chart for deploying the Guardrails k8s agent
+    digest: c895c663e6afc28e6a8c7ac78606592bca365720fe54317d58baa27800fe13dc
+    name: guardrails-agent-kubernetes
+    type: application
+    urls:
+    - https://github.com/turbot/helm-charts/releases/download/guardrails-agent-kubernetes-0.0.2/guardrails-agent-kubernetes-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     appVersion: 0.0.1
     created: "2024-05-03T14:47:35.100271553Z"
     description: Helm chart for deploying the Guardrails k8s agent
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://github.com/turbot/helm-charts/releases/download/guardrails-agent-kubernetes-0.0.1/guardrails-agent-kubernetes-0.0.1.tgz
     version: 0.0.1
-generated: "2024-05-03T14:47:35.100277233Z"
+generated: "2024-05-03T14:48:26.469530737Z"
