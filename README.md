@@ -11,13 +11,13 @@ Please refer to [official Helm documentation](https://helm.sh/docs/) to get star
 Once Helm has be correctly installed. Add the Helm repository as follows:
 
 ```sh
-helm repo add turbot-helm https://turbot.github.io/helm-charts
+helm repo add turbot https://turbot.github.io/helm-charts
 ```
 
 You can search through available published charts using the command:
 
 ```sh
-helm search repo turbot-helm
+helm search repo turbot
 ```
 
 ## Open Source & Contributing
