@@ -7,8 +7,8 @@ on:
         description: 'Chart version'
         required: true
         default: '0.0.1'
-      appVersion:
-        description: 'Application version'
+      app_version:
+        description: 'Agent Docker version'
         required: true
         default: '0.0.1'
 
@@ -27,7 +27,7 @@ jobs:
       - name: Modify Chart Version
         run: |
           sed -i "s/version: .*/version: ${{ github.event.inputs.version }}/" ./charts/guardrails-agent-kubernetes/Chart.yaml
-          sed -i "s/appVersion: .*/appVersion: ${{ github.event.inputs.appVersion }}/" ./charts/guardrails-agent-kubernetes/Chart.yaml
+          sed -i "s/appVersion: .*/appVersion: ${{ github.event.inputs.app_version }}/" ./charts/guardrails-agent-kubernetes/Chart.yaml
 
       - name: Configure Git
         run: |
