@@ -37,7 +37,7 @@ jobs:
       - name: Commit Chart Version
         run: |
           git add ./charts/guardrails-agent-kubernetes/Chart.yaml
-          git commit -m "Update chart version to ${{ github.event.inputs.version }}"
+          git commit -m "Update Kubernetes Agent Chart version to ${{ github.event.inputs.version }}"
           git push
 
       - name: Run chart-releaser
