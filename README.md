@@ -1,5 +1,5 @@
 # Turbot Helm Charts
-![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/turbot-helm)
+![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/turbot)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 [![Release Charts](https://github.com/turbot/helm-charts/actions/workflows/release.yaml/badge.svg)](https://github.com/turbot/helm-charts/actions/workflows/release.yaml)
 
