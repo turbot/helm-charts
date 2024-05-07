@@ -38,6 +38,7 @@ sources:
   - https://github.com/turbot/helm-charts/tree/main/charts/guardrails-agent-kubernetes
 
 annotations:
+  artifacthub.io/category: security
   artifacthub.io/license: Apache-2.0
   artifacthub.io/links: |
     - name: Turbot Helm Charts
