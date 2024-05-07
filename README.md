@@ -26,4 +26,7 @@ This repository is published under the [Apache 2.0](https://www.apache.org/licen
 
 ## Get Involved
 
-**[Join #steampipe on Slack →](https://turbot.com/community/join)**
+**[Join #contributors on Slack →](https://turbot.com/community/join)**
+
+Want to help but don't know where to start? Pick up one of the `help wanted` issues:
+* [Helm Charts](https://github.com/turbot/helm-charts/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
