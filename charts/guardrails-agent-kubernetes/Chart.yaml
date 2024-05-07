@@ -1,6 +1,7 @@
 apiVersion: v2
 name: guardrails-agent-kubernetes
-description: Helm chart for deploying the Guardrails k8s agent
+home: https://turbot.com/guardrails
+description: Guardrails Agent for Kubernetes
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -22,3 +23,17 @@ version: 0.1.0
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
 appVersion: 0.1.0
+
+keywords:
+  - agent
+  - kubernetes
+  - turbot
+  - guardrails
+
+annotations:
+  "artifacthub.io/license": Apache-2.0
+  artifacthub.io/links: |
+    - name: Chart Source
+      url: https://github.com/turbot/helm-charts
+    - name: support
+      url: https://github.com/turbot/helm-charts/issues
