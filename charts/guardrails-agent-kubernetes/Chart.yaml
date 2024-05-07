@@ -30,6 +30,10 @@ keywords:
   - turbot
   - guardrails
 
+maintainers:
+  - name: Turbot
+    email: help@turbot.com
+
 sources:
   - https://github.com/turbot/helm-charts/tree/main/charts/guardrails-agent-kubernetes
 
