@@ -10,6 +10,34 @@ entries:
           url: https://github.com/turbot/helm-charts/issues
     apiVersion: v2
     appVersion: 0.1.0
+    created: "2024-05-07T17:55:06.659798548Z"
+    description: Guardrails Agent for Kubernetes
+    digest: 10af5363bf99a1bb13f811601dbc2d18905e78951e037a40b93cb99bbf08885e
+    home: https://turbot.com/guardrails
+    keywords:
+    - agent
+    - kubernetes
+    - turbot
+    - guardrails
+    maintainers:
+    - email: help@turbot.com
+      name: Turbot
+    name: guardrails-agent-kubernetes
+    sources:
+    - https://github.com/turbot/helm-charts/tree/main/charts/guardrails-agent-kubernetes
+    type: application
+    urls:
+    - https://github.com/turbot/helm-charts/releases/download/guardrails-agent-kubernetes-0.1.3/guardrails-agent-kubernetes-0.1.3.tgz
+    version: 0.1.3
+  - annotations:
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Turbot Helm Charts
+          url: https://github.com/turbot/helm-charts
+        - name: support
+          url: https://github.com/turbot/helm-charts/issues
+    apiVersion: v2
+    appVersion: 0.1.0
     created: "2024-05-07T17:05:41.241386483Z"
     description: Guardrails Agent for Kubernetes
     digest: 73bb9bcfb62e7eaee2f25709d225ea54f7bf6ba8dc2c661c0b59f2cde477dffd
@@ -36,4 +64,4 @@ entries:
     urls:
     - https://github.com/turbot/helm-charts/releases/download/guardrails-agent-kubernetes-0.1.0/guardrails-agent-kubernetes-0.1.0.tgz
     version: 0.1.0
-generated: "2024-05-07T17:05:41.241394979Z"
+generated: "2024-05-07T17:55:06.659818856Z"
