@@ -2,6 +2,7 @@ apiVersion: v2
 name: guardrails-agent-kubernetes
 home: https://turbot.com/guardrails
 description: Guardrails Agent for Kubernetes
+icon: https://artifacthub.io/image/f26e874c-1b22-4fda-be87-bfdba9a848ef
 
 # A chart can be either an 'application' or a 'library' chart.
 #
