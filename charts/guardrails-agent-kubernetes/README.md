@@ -74,7 +74,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | autoscaling.targetCPUUtilizationPercentage | int | `80` | Target CPU utilization percentage |
 | extraEnv | list | `[]` | Extra environment variables to pass to the agent |
 | fullnameOverride | string | `""` | Override the full name for resources |
-| guardrails.tlsHostname | string | `""` | Hostname to a Guardrails server |
+| guardrails.hostname | string | `""` | Hostname to a Guardrails server |
 | image.pullPolicy | string | `IfNotPresent` | Image pull policy |
 | image.repository | string | `ghcr.io/turbot/guardrails-agent-kubernetes` | Image repository |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion |
@@ -87,7 +87,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | persistentVolume.accessModes | list | `[ReadWriteOnce]` | Access modes for the persistent volume |
 | persistentVolume.annotations | object | `{}` | Annotations for the persistent volume |
 | persistentVolume.capacity | string | `"10Gi"` | Capacity of the persistent volume |
-| persistentVolume.create | bool | `true` | Specifies whether a persistent volume should be created |
+| persistentVolume.create | bool | `true` | Specifies whether a persistent volume should be created for the guardrails agent |
 | persistentVolume.reclaimPolicy | string | `Retain` | Reclaim policy for the persistent volume |
 | persistentVolume.selector | object | `{}` | Selector for the persistent volume |
 | persistentVolume.storageClassName | string | `standard` | Storage class for the persistent volume |
