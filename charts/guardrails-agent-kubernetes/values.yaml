@@ -4,7 +4,7 @@
 
 # Hostname to a Guardrails server
 guardrails:
-  tlsHostname: ""
+  hostname: ""
 
 replicaCount: 1
 image:

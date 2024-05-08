@@ -42,8 +42,11 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+            # DEPRECATED: Use HOSTNAME instead
             - name: TLS_HOSTNAME
-              value: {{ .Values.guardrails.tlsHostname }}
+              value: {{ .Values.guardrails.hostname }}
+            - name: HOSTNAME
+              value: {{ .Values.guardrails.hostname }}
             - name: ENROLL_SECRET
               valueFrom:
                 secretKeyRef:
