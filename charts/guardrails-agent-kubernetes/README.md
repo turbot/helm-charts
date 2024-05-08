@@ -34,6 +34,7 @@ kubectl create secret generic guardrails-agent-kubernetes-secret --from-literal 
 ```
 
 Set Guardrails values in `guardrails-values.yaml`:
+
 ```sh
 HOSTNAME=myworkspace.turbot.com
 echo "guardrails:
