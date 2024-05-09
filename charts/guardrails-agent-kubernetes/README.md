@@ -84,7 +84,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | persistentVolume.create | bool | `true` | Specifies whether a persistent volume should be created for the guardrails agent |
 | persistentVolume.reclaimPolicy | string | `Retain` | Reclaim policy for the persistent volume |
 | persistentVolume.selector | object | `{}` | Selector for the persistent volume |
-| persistentVolume.storageClassName | string | `standard` | Storage class for the persistent volume |
+| persistentVolume.storageClassName | string | `` | Storage class for the persistent volume |
 | persistentVolume.volumeName | string | `""` | Name of the persistent volume |
 | podAnnotations | object | `{}` | Annotations to be added to pods |
 | podLabels | object | `{}` | Labels to be added to pods |
