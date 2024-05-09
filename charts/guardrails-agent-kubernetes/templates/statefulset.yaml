@@ -28,10 +28,6 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       serviceAccountName: {{ include "guardrails-agent-kubernetes.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
@@ -42,9 +38,6 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            # DEPRECATED: Use HOSTNAME instead
-            - name: TLS_HOSTNAME
-              value: {{ .Values.guardrails.hostname }}
             - name: HOSTNAME
               value: {{ .Values.guardrails.hostname }}
             - name: ENROLL_SECRET

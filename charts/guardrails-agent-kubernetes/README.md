@@ -78,7 +78,6 @@ The command removes all the Kubernetes components associated with the chart and 
 | image.pullPolicy | string | `IfNotPresent` | Image pull policy |
 | image.repository | string | `ghcr.io/turbot/guardrails-agent-kubernetes` | Image repository |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion |
-| imagePullSecrets | list | `[]` | Specify image pull secrets |
 | livenessProbe.httpGet.path | string | `/` | HTTP GET path for liveness probe |
 | livenessProbe.httpGet.port | string | `http` | HTTP GET port for liveness probe |
 | nameOverride | string | `""` | Override the default name for resources |
