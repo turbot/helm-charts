@@ -1,0 +1,28 @@
+{{- if .Values.persistence.enabled -}}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "guardrails-agent-kubernetes.fullname" . }}
+  labels:
+    {{- include "guardrails-agent-kubernetes.labels" . | nindent 4 }}
+  {{- with .Values.persistence.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+  namespace: {{ include "guardrails-agent-kubernetes.namespace" . }}
+spec:
+  accessModes: {{ .Values.persistence.accessModes }}
+  resources:
+    requests:
+      storage: {{ .Values.persistence.capacity }}
+  {{- if .Values.persistence.storageClassName }}
+  storageClassName: {{ .Values.persistence.storageClassName }}
+  {{- end }}
+  {{- if .Values.persistence.selector }}
+  selector:
+    {{- toYaml .Values.persistence.selector | nindent 4 }}
+  {{- end }}
+  {{- if .Values.persistence.volumeName }}
+  volumeName: "{{ .Values.persistence.volumeName }}"
+  {{- end -}}
+{{- end }}
