@@ -69,8 +69,12 @@ spec:
               mountPath: /var/osquery/
             - name: temp-directory
               mountPath: /tmp/
+            - name: osquery-socket
+              mountPath: /var/osquery
       volumes:
         - name: temp-directory
+          emptyDir: {}
+        - name: osquery-socket
           emptyDir: {}
         - name: osquery-data 
           {{- if .Values.persistentVolume.create }}
