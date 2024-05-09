@@ -10,9 +10,7 @@ metadata:
   {{- end }}
   namespace: {{ include "guardrails-agent-kubernetes.namespace" . }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
-  {{- end }}
+  replicas: 1
   selector:
     matchLabels:
       {{- include "guardrails-agent-kubernetes.selectorLabels" . | nindent 6 }}
@@ -28,23 +26,16 @@ spec:
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       serviceAccountName: {{ include "guardrails-agent-kubernetes.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
+            {{- toYaml .Values.containerSecurityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-            # DEPRECATED: Use HOSTNAME instead
-            - name: TLS_HOSTNAME
-              value: {{ .Values.guardrails.hostname }}
             - name: HOSTNAME
               value: {{ .Values.guardrails.hostname }}
             - name: ENROLL_SECRET
@@ -76,7 +67,11 @@ spec:
             {{- end }}
             - name: osquery-data 
               mountPath: /var/osquery/
+            - name: temp-directory
+              mountPath: /tmp/
       volumes:
+        - name: temp-directory
+          emptyDir: {}
         - name: osquery-data 
           {{- if .Values.persistentVolume.create }}
           persistentVolumeClaim:

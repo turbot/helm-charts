@@ -6,14 +6,12 @@
 guardrails:
   hostname: ""
 
-replicaCount: 1
 image:
   repository: ghcr.io/turbot/guardrails-agent-kubernetes
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
-imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
@@ -68,23 +66,14 @@ roleBinding:
 podAnnotations: {}
 podLabels: {}
 
-podSecurityContext:
-  readOnlyRootFilesystem: true
-  runAsNonRoot: true
-  runAsUser: 1000
-  allowPrivilegeEscalation: false
-
-
+podSecurityContext: {}
   # fsGroup: 2000
 
-securityContext:
-  {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
+containerSecurityContext:
+  readOnlyRootFilesystem: true
+  runAsNonRoot: true
+  runAsUser: 2000
+  allowPrivilegeEscalation: false
 
 resources:
   {}
@@ -98,22 +87,6 @@ resources:
   # requests:
   #   cpu: 100m
   #   memory: 128Mi
-
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
-
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
 
 # Additional volumes on the output StatefulSet definition.
 volumes: []
