@@ -10,9 +10,7 @@ metadata:
   {{- end }}
   namespace: {{ include "guardrails-agent-kubernetes.namespace" . }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
   replicas: 1
-  {{- end }}
   selector:
     matchLabels:
       {{- include "guardrails-agent-kubernetes.selectorLabels" . | nindent 6 }}

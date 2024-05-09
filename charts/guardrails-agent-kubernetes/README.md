@@ -68,10 +68,6 @@ The command removes all the Kubernetes components associated with the chart and 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` | Pod affinity |
-| autoscaling.enabled | bool | `false` | Enables autoscaling |
-| autoscaling.maxReplicas | int | `100` | Maximum number of replicas |
-| autoscaling.minReplicas | int | `1` | Minimum number of replicas |
-| autoscaling.targetCPUUtilizationPercentage | int | `80` | Target CPU utilization percentage |
 | containerSecurityContext | object | `{ readOnlyRootFilesystem: true, runAsNonRoot: true, runAsUser: 1000, allowPrivilegeEscalation: false }` | Security settings for the agent container running in the pod |
 | extraEnv | list | `[]` | Extra environment variables to pass to the agent |
 | fullnameOverride | string | `""` | Override the full name for resources |
