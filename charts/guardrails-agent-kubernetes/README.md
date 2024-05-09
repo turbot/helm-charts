@@ -68,7 +68,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` | Pod affinity |
-| containerSecurityContext | object | `{ readOnlyRootFilesystem: true, runAsNonRoot: true, runAsUser: 1000, allowPrivilegeEscalation: false }` | Security settings for the agent container running in the pod |
+| containerSecurityContext | object | `{ readOnlyRootFilesystem: true, runAsNonRoot: true, runAsUser: 2000, allowPrivilegeEscalation: false }` | Security settings for the agent container running in the pod |
 | extraEnv | list | `[]` | Extra environment variables to pass to the agent |
 | fullnameOverride | string | `""` | Override the full name for resources |
 | guardrails.hostname | string | `""` | Hostname to a Guardrails server |
