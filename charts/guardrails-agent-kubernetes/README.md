@@ -78,14 +78,13 @@ The command removes all the Kubernetes components associated with the chart and 
 | nameOverride | string | `""` | Override the default name for resources |
 | namespaceOverride | string | `""` | Override the namespace for deployed resources |
 | nodeSelector | object | `{}` | Node labels for pod assignment |
-| persistentVolume.accessModes | list | `[ReadWriteOnce]` | Access modes for the persistent volume |
-| persistentVolume.annotations | object | `{}` | Annotations for the persistent volume |
-| persistentVolume.capacity | string | `"10Gi"` | Capacity of the persistent volume |
-| persistentVolume.create | bool | `true` | Specifies whether a persistent volume should be created for the guardrails agent |
-| persistentVolume.reclaimPolicy | string | `Retain` | Reclaim policy for the persistent volume |
-| persistentVolume.selector | object | `{}` | Selector for the persistent volume |
-| persistentVolume.storageClassName | string | `` | Storage class for the persistent volume |
-| persistentVolume.volumeName | string | `""` | Name of the persistent volume |
+| persistence.accessModes | list | `[ReadWriteOnce]` | Access modes for the persistent volume |
+| persistence.annotations | object | `{}` | Annotations for the persistent volume |
+| persistence.capacity | string | `"10Gi"` | Capacity of the persistent volume |
+| persistence.enabled | bool | `true` | Enable persistence on osquery.db using a PVC. If false, use emptyDir |
+| persistence.selector | object | `{}` | Selector for the persistent volume |
+| persistence.storageClassName | string | `` | Storage class for the persistent volume |
+| persistence.volumeName | string | `""` | Name of the persistent volume |
 | podAnnotations | object | `{}` | Annotations to be added to pods |
 | podLabels | object | `{}` | Labels to be added to pods |
 | podSecurityContext | object | `{}` | Security settings for the the pod |

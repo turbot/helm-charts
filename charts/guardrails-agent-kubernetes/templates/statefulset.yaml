@@ -76,13 +76,13 @@ spec:
           emptyDir: {}
         - name: osquery-socket
           emptyDir: {}
-        - name: osquery-data 
-          {{- if .Values.persistentVolume.create }}
-          persistentVolumeClaim:
+        - name: osquery-data
+          {{- if .Values.persistence.enabled }}
+          persistenceClaim:
             claimName: {{ include "guardrails-agent-kubernetes.fullname" . }}
           {{- else }}
           emptyDir:
-            sizeLimit: {{ .Values.persistentVolume.capacity }}
+            sizeLimit: {{ .Values.persistence.capacity }}
           {{- end }}
 
       {{- with .Values.nodeSelector }}
