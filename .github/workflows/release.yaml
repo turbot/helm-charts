@@ -1,16 +1,9 @@
-name: Release Kubernetes Agent Chart
+name: Release Charts
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Chart version'
-        required: true
-        default: '0.0.1'
-      app_version:
-        description: 'Agent Docker version'
-        required: true
-        default: '0.0.1'
+  push:
+    branches:
+      - main
 
 jobs:
   release:
@@ -24,21 +17,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Modify Chart Version
-        run: |
-          sed -i "s/version: .*/version: ${{ github.event.inputs.version }}/" ./charts/guardrails-agent-kubernetes/Chart.yaml
-          sed -i "s/appVersion: .*/appVersion: ${{ github.event.inputs.app_version }}/" ./charts/guardrails-agent-kubernetes/Chart.yaml
-
       - name: Configure Git
         run: |
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
-
-      - name: Commit Chart Version
-        run: |
-          git add ./charts/guardrails-agent-kubernetes/Chart.yaml
-          git commit -m "Update Kubernetes Agent Chart version to ${{ github.event.inputs.version }}"
-          git push
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
