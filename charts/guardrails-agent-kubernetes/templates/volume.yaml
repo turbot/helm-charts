@@ -15,7 +15,9 @@ spec:
   resources:
     requests:
       storage: {{ .Values.persistentVolume.capacity }}
+  {{- if .Values.persistentVolume.storageClassName }}
   storageClassName: {{ .Values.persistentVolume.storageClassName }}
+  {{- end }}
   {{- if .Values.persistentVolume.selector }}
   selector:
     {{- toYaml .Values.persistentVolume.selector | nindent 4 }}
