@@ -72,6 +72,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | autoscaling.maxReplicas | int | `100` | Maximum number of replicas |
 | autoscaling.minReplicas | int | `1` | Minimum number of replicas |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` | Target CPU utilization percentage |
+| containerSecurityContext | object | `{ readOnlyRootFilesystem: true, runAsNonRoot: true, runAsUser: 1000, allowPrivilegeEscalation: false }` | Security settings for the agent container running in the pod |
 | extraEnv | list | `[]` | Extra environment variables to pass to the agent |
 | fullnameOverride | string | `""` | Override the full name for resources |
 | guardrails.hostname | string | `""` | Hostname to a Guardrails server |
@@ -93,17 +94,13 @@ The command removes all the Kubernetes components associated with the chart and 
 | persistentVolume.volumeName | string | `""` | Name of the persistent volume |
 | podAnnotations | object | `{}` | Annotations to be added to pods |
 | podLabels | object | `{}` | Labels to be added to pods |
-| podSecurityContext.allowPrivilegeEscalation | bool | `false` | Whether to allow privilege escalation |
-| podSecurityContext.readOnlyRootFilesystem | bool | `true` | Mount the root filesystem as read-only |
-| podSecurityContext.runAsNonRoot | bool | `true` | Ensure that the container is run as a non-root user |
-| podSecurityContext.runAsUser | int | `1000` | UID to run the entrypoint of the container process |
+| podSecurityContext | object | `{}` | Security settings for the the pod |
 | readinessProbe.httpGet.path | string | `/` | HTTP GET path for readiness probe |
 | readinessProbe.httpGet.port | string | `http` | HTTP GET port for readiness probe |
 | replicaCount | int | `1` | Number of replicas to deploy |
 | resources | object | `{}` | CPU/memory resource requests/limits |
 | role.annotations | object | `{}` | Annotations to add to the role |
 | roleBinding.annotations | object | `{}` | Annotations to add to the role binding |
-| securityContext | object | `{}` | Security settings for the pod |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
 | serviceAccount.automount | bool | `true` | Whether to automatically mount the service account's API credentials |
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
