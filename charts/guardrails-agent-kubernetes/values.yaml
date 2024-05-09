@@ -6,7 +6,6 @@
 guardrails:
   hostname: ""
 
-replicaCount: 1
 image:
   repository: ghcr.io/turbot/guardrails-agent-kubernetes
   pullPolicy: IfNotPresent

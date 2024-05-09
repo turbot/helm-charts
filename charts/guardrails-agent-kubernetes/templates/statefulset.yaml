@@ -11,7 +11,7 @@ metadata:
   namespace: {{ include "guardrails-agent-kubernetes.namespace" . }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
+  replicas: 1
   {{- end }}
   selector:
     matchLabels:

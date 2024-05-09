@@ -95,7 +95,6 @@ The command removes all the Kubernetes components associated with the chart and 
 | podSecurityContext | object | `{}` | Security settings for the the pod |
 | readinessProbe.httpGet.path | string | `/` | HTTP GET path for readiness probe |
 | readinessProbe.httpGet.port | string | `http` | HTTP GET port for readiness probe |
-| replicaCount | int | `1` | Number of replicas to deploy |
 | resources | object | `{}` | CPU/memory resource requests/limits |
 | role.annotations | object | `{}` | Annotations to add to the role |
 | roleBinding.annotations | object | `{}` | Annotations to add to the role binding |
