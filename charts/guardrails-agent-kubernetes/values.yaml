@@ -4,7 +4,8 @@
 
 # Hostname to a Guardrails server
 guardrails:
-  hostname: ""
+  # TODO: Revert tlsHostname to hostname after testing
+  tlsHostname: ""
 
 image:
   repository: ghcr.io/turbot/guardrails-agent-kubernetes
@@ -27,7 +28,8 @@ enrollmentSecretName: ""
 # Enable persistence using Persistent Volume Claims (PVCs)
 persistence:
   # Enable persistence on osquery.db using a PVC. If false, use emptyDir
-  enabled: true
+  # TODO: Revert this back to "enabled" after testing
+  enabled: false
   # The capacity of the persistent volume
   capacity: "10Gi"
   # The access modes of the persistent volume
