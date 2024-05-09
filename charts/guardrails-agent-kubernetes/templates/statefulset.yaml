@@ -78,7 +78,7 @@ spec:
           emptyDir: {}
         - name: osquery-data
           {{- if .Values.persistence.enabled }}
-          persistenceVolumeClaim:
+          persistentVolumeClaim:
             claimName: {{ include "guardrails-agent-kubernetes.fullname" . }}
           {{- else }}
           emptyDir:

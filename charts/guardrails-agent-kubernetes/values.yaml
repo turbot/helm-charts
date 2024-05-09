@@ -64,9 +64,7 @@ roleBinding:
 podAnnotations: {}
 podLabels: {}
 
-podSecurityContext:
-  {}
-  # fsGroup: 2000
+podSecurityContext: {}
 
 containerSecurityContext:
   readOnlyRootFilesystem: true
