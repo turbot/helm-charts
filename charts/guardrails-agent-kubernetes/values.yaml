@@ -35,7 +35,7 @@ persistentVolume:
   # The reclaim policy of the persistent volume
   reclaimPolicy: Retain
   # The storage class of the persistent volume
-  storageClassName: standard
+  storageClassName: ""
   # Annotations to add to the persistent volume
   annotations: {}
   # The selector for the persistent volume
