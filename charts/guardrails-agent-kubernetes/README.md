@@ -50,7 +50,7 @@ helm install guardrails-agent-kubernetes turbot/guardrails-agent-kubernetes --na
 View the logs:
 
 ```sh
-kubectl logs -f sts/guardrails-agent-kubernetes
+kubectl logs -f sts/guardrails-agent-kubernetes --namespace guardrails
 ```
 
 ## Uninstalling the Chart
@@ -58,7 +58,7 @@ kubectl logs -f sts/guardrails-agent-kubernetes
 To uninstall the `guardrails-agent-kubernetes` deployment:
 
 ```sh
-helm delete guardrails-agent-kubernetes
+helm delete guardrails-agent-kubernetes --namespace guardrails
 ```
 
 The command removes all the Kubernetes components associated with the chart and deletes the release.
