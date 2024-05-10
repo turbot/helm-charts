@@ -37,7 +37,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: HOSTNAME
-              value: {{ .Values.guardrails.tlsHostname }}
+              value: {{ .Values.guardrails.hostname }}
             - name: ENROLL_SECRET
               valueFrom:
                 secretKeyRef:

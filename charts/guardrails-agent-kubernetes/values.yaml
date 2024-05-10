@@ -4,8 +4,7 @@
 
 # Hostname to a Guardrails server
 guardrails:
-  # TODO: Revert tlsHostname to hostname after testing
-  tlsHostname: ""
+  hostname: ""
 
 image:
   repository: ghcr.io/turbot/guardrails-agent-kubernetes
