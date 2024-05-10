@@ -7,7 +7,7 @@ Please see [Guardrails Kubernetes Integration](https://turbot.com/guardrails/doc
 ## Get Repository Info
 
 ```sh
-helm repo add turbot https://turbot.github.io/helm-charts
+helm repo add turbot https://helm.turbot.com
 helm repo update
 ```
 
