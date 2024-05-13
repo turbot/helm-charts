@@ -53,6 +53,23 @@ View the logs:
 kubectl logs -f sts/guardrails-agent-kubernetes --namespace guardrails
 ```
 
+## Upgrading the Chart
+
+To upgrade a release to a new chart version:
+
+```sh
+helm repo update
+helm upgrade guardrails-agent-kubernetes turbot/guardrails-agent-kubernetes --namespace guardrails --reuse-values
+```
+
+To update the values, pass in the new values with the `-f` flag:
+
+```sh
+helm upgrade guardrails-agent-kubernetes turbot/guardrails-agent-kubernetes --namespace guardrails --reuse-values -f guardrails-values.yaml
+```
+
+Only values included in `guardrails-values.yaml` will be updated, with priority being given to new values.
+
 ## Uninstalling the Chart
 
 To uninstall the `guardrails-agent-kubernetes` deployment:
