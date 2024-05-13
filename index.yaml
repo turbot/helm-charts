@@ -1,0 +1,34 @@
+apiVersion: v1
+entries:
+  guardrails-agent-kubernetes:
+  - annotations:
+      artifacthub.io/category: security
+      artifacthub.io/license: Apache-2.0
+      artifacthub.io/links: |
+        - name: Turbot Helm Charts
+          url: https://github.com/turbot/helm-charts
+        - name: support
+          url: https://github.com/turbot/helm-charts/issues
+    apiVersion: v2
+    appVersion: 0.1.0
+    created: "2024-05-13T19:45:08.670512196Z"
+    description: Guardrails Agent for Kubernetes
+    digest: 9af1334fa1fb147b2dde0adb7483b5c714337c9289b4f36433fec949044d730d
+    home: https://turbot.com/guardrails
+    icon: https://turbot.com/images/logos/guardrails_logo_darkmode.svg
+    keywords:
+    - agent
+    - kubernetes
+    - turbot
+    - guardrails
+    maintainers:
+    - email: help@turbot.com
+      name: Turbot
+    name: guardrails-agent-kubernetes
+    sources:
+    - https://github.com/turbot/helm-charts/tree/main/charts/guardrails-agent-kubernetes
+    type: application
+    urls:
+    - https://github.com/turbot/helm-charts/releases/download/guardrails-agent-kubernetes-0.1.0/guardrails-agent-kubernetes-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-05-13T19:45:08.670522826Z"
