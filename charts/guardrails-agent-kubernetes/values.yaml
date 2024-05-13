@@ -27,8 +27,7 @@ enrollmentSecretName: ""
 # Enable persistence using Persistent Volume Claims (PVCs)
 persistence:
   # Enable persistence on osquery.db using a PVC. If false, use emptyDir
-  # TODO: Revert this back to "enabled" after testing
-  enabled: false
+  enabled: true
   # The capacity of the persistent volume
   capacity: "10Gi"
   # The access modes of the persistent volume
