@@ -1,33 +1,30 @@
-name: Release Charts
+name: Sync README
 
 on:
   push:
     branches:
-      - main
+      - "main"
     paths:
-      - "charts/**"
+      - "README.md"
 
 # Prevent two release workflows from running concurrently, which might cause write-after-read race conditions in the repository's gh-pages branch
 # Ref: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#concurrency
-concurrency: helm-release
+concurrency: sync-readme
 
 jobs:
-  release-charts:
-    permissions:
-      contents: write
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - run: |
+          cp -f README.md ${{ runner.temp }}/README.md
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-
-      - name: Configure Git
-        run: |
+          ref: gh-pages
+      - run: |
+          cp -f ${{ runner.temp }}/README.md .
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
-
-      - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.6.0
-        env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          git add README.md
+          git commit --signoff -m "Sync README from main"
+          git push
