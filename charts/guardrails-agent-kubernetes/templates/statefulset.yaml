@@ -70,7 +70,7 @@ spec:
             - name: temp-directory
               mountPath: /tmp/
             - name: osquery-socket
-              mountPath: /var/osquery
+              mountPath: /run/osquery/
       volumes:
         - name: temp-directory
           emptyDir: {}

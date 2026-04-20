@@ -1,3 +1,7 @@
+## v0.4.0 [TBD]
+
+- Fixed: OSQuery Socket mount overwriting Data mount. [#21](https://github.com/turbot/helm-charts/issues/21)  
+
 ## v0.3.0 [2024-12-03]
 
 - Updated guardrails-agent-kubernetes image version to [v0.3.0](https://github.com/turbot/guardrails-agent-kubernetes/blob/main/CHANGELOG.md#v030-2024-12-03) which updates the osquery Kubernetes extension to v1.2.0.
